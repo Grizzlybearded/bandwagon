@@ -1,0 +1,23 @@
+<h1><%= @category.title %></h1>
+
+<% @categories.each do |c| %>
+	<p><%= link_to_unless_current(c.title, c) %></p>
+<% end %>
+
+<% if @blurbs.any? %>
+	<% @blurbs.each do |b| %>
+		<h2>
+			<%= b.content %>
+		</h2>
+	<% end %>
+<% else %>
+	<%= "There really is not much to mention right now.  This sport will become relevant in a couple of months." %>
+<% end %>
+
+<%= form_for(@blurb) do |f| %>
+	
+	<%= f.text_area :content, placeholder: "Compose new blurb..." %>
+
+	<%= f.hidden_field :category_id, value: @category.id %>
+	<%= f.submit "Post", class: "btn btn-large btn-primary" %>
+<% end %>

@@ -1,5 +1,19 @@
 Bandwagon::Application.routes.draw do
+  devise_for :users
+  #get "categories/:id", to: 'categories#show'
+  #get "categories/new"
+  #get "categories/update"
+  #get "categories/create"
+  #get "categories/edit"
+  #get "categories/delete"
   get "static_pages/home"
+
+  root to: 'static_pages#home'
+
+  resources :blurbs, only: [:create, :destroy]
+  resources :categories, only: [:show]
+
+  #resources :categories
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
