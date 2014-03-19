@@ -11,10 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140319172205) do
+ActiveRecord::Schema.define(version: 20140319173048) do
 
   create_table "blurbs", force: true do |t|
-    t.text     "content",     limit: 255
+    t.text     "content"
     t.integer  "category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
