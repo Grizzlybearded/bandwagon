@@ -33,18 +33,86 @@ textarea {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: #fff;
-  text-transform: uppercase;
+  color: 545454;
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
   line-height: 1;
+  background: #d0d5db;
 }
 
 #logo:hover {
   color: #fff;
   text-decoration: none;
 }
+
+.marquee {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.2em;
+  color: #229ce2;
+  padding-top: 12px;
+  line-height: 1;
+}
+
+/* navbar */
+
+.navbar-inner {
+  background: #d0d5db;
+  background-color: #d0d5db;
+  background-image: none;
+  background-repeat: none;
+  filter: none;
+/*
+  background-image: -moz-linear-gradient(top, #d0d5db, #d0d5db);
+  background-image: -ms-linear-gradient(top, #d0d5db, #d0d5db);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#d0d5db), to(#d0d5db));
+  background-image: -webkit-linear-gradient(top, #d0d5db, #d0d5db);
+  background-image: -o-linear-gradient(top, #d0d5db, #d0d5db);
+  background-image: linear-gradient(top, #d0d5db, #d0d5db);
+  
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#'d0d5db, endColorstr='#'d0d5db, GradientType=0);
+*/
+
+}
+
+.navbar-fixed-top {
+	background-color: #d0d5db;	
+}
+
+.navbar .brand {
+  padding: 8px 20px 12px;
+  font-size: 20px;
+  color: #298eaa;
+}
+
+.navbar .divider-vertical {
+  height: 41px;
+  background-color: #298eaa;
+  border-right: 1px solid #c6c6c6;
+}
+
+.navbar .nav > li > a {
+  padding: 10px 10px 11px;
+  font-size: 14px;
+  color: #298eaa;
+}
+
+.navbar .nav > .active > a,
+.navbar .nav > .active > a:hover,
+.navbar .nav > .active > a:focus {
+  color: #298eaa;
+}
+
+
+
+
+
+
+
+
+
+
 
 /* footer */
 
