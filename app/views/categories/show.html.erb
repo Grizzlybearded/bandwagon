@@ -10,6 +10,7 @@
     
     	<% if user_signed_in? %>
 			<%= form_for(@blurb) do |f| %>
+				<%= f.text_field :name, placeholder: "Enter a headline..." %>
 				<%= f.text_area :content, placeholder: "Compose new blurb..." %>
 				<%= f.hidden_field :category_id, value: @category.id %>
 				<%= f.submit "Post", class: "btn btn-large btn-primary" %>

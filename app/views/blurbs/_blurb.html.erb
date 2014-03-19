@@ -1,6 +1,13 @@
 <li>
-  <span class="content"><%= blurb.content %></span>
-  <span class="timestamp">
-    Posted <%= blurb.created_at %> ago.
-  </span>
+	<% if !blurb.name.nil? %>
+	  <span class="content">
+	  	<h5>
+	  		<%= blurb.name %>
+	  	</h5>
+	  </span>	
+	  <span class="content"><%= blurb.content %></span>
+	  <span class="timestamp">
+	    Posted <%= time_ago_in_words(blurb.created_at) unless blurb.created_at.blank? %> ago.
+	  </span>
+	 <% end %>
 </li>

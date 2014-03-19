@@ -18,6 +18,6 @@ class BlurbsController < ApplicationController
 
 private
 	def blurb_params
-		params.require(:blurb).permit(:content, :category_id)
+		params.require(:blurb).permit(:content, :category_id, :name)
 	end
 end
