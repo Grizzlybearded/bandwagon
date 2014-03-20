@@ -6,8 +6,5 @@
 	  	</h5>
 	  </span>	
 	  <span class="content"><%= blurb.content %></span>
-	  <span class="timestamp">
-	    Posted <%= time_ago_in_words(blurb.created_at) unless blurb.created_at.blank? %> ago.
-	  </span>
 	 <% end %>
 </li>

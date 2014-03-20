@@ -24,7 +24,7 @@
 
 	<div class="span8">
 		<% if @blurbs.any? %>
-			<h3><%= @category.title %> (<%= @blurbs.count %>)</h3>
+			<h3><%= @category.title %> (<%= @blurbs.count %>) on <%= DateTime.now.strftime("%B %d, %Y")%></h3>
 			<h3>Why it's relevant</h3>
 			<p><%= @category.description %></p>
 			

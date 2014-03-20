@@ -11,7 +11,9 @@ Bandwagon::Application.routes.draw do
   root to: 'static_pages#home'
 
   resources :blurbs, only: [:create, :destroy]
-  resources :categories, only: [:show]
+  #resources :categories, only: [:show]
+
+  get 'categories/:id', to: "categories#show", as: :category
 
   #resources :categories
   # The priority is based upon order of creation: first created -> highest priority.
