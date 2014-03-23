@@ -19,6 +19,7 @@ class CategoriesController < ApplicationController
   		redirect_to @category
   	else
   		flash[:notice] = "New email no created!"
+      redirect_to :back
   	end
   end
 

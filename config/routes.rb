@@ -12,6 +12,7 @@ Bandwagon::Application.routes.draw do
 
   resources :blurbs, only: [:create, :destroy, :update, :edit]
   resources :categories, only: [:show, :create, :destroy, :update, :edit, :new]
+  resources :collectemails, only: [:create]
 
   #resources :categories
   # The priority is based upon order of creation: first created -> highest priority.

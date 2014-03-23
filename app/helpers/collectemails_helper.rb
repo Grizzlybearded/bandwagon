@@ -1,0 +1,2 @@
+module CollectemailsHelper
+end
