@@ -14,6 +14,24 @@ class BlurbsController < ApplicationController
 	end
 
 	def destroy
+		Blurb.find(params[:id]).destroy
+		flash[:success] = "Blurb destroyed!"
+		redirect_to :back
+	end
+
+	def edit
+		@blurb = Blurb.find(params[:id])
+	end
+
+	def update
+		@blurb = Blurb.find(params[:id])
+		if @blurb.update_attributes(blurb_params)
+			flash[:success] = "Blurb updated!"
+			redirect_to @blurb.category
+		else
+			flash[:notice] = "Blurb not updated!"
+			render 'edit'
+		end
 	end
 
 private

@@ -4,17 +4,17 @@
 <div class="row">
   <aside class="span4">
     <section>
-		<% @categories.each do |c| %>
-			<h4><%= link_to_unless_current(c.title, c) %></h4>
-		<% end %>
-    
     	<% if user_signed_in? %>
-			<%= form_for(@blurb) do |f| %>
-				<%= f.text_field :name, placeholder: "Enter a headline..." %>
-				<%= f.text_area :content, placeholder: "Compose new blurb..." %>
-				<%= f.hidden_field :category_id, value: @category.id %>
-				<%= f.submit "Post", class: "btn btn-large btn-primary" %>
+    		<%= link_to 'Create a new email', new_category_path %>
+    	<% end %>
+
+		<% @categories.each do |c| %>
+			<h4><%= link_to_unless_current(c.title, c) %>
+			<% if user_signed_in? %>
+				<%= link_to "Edit", edit_category_path(c) %>
+				<%= link_to "Destroy", c, method: :delete, data: {confirm: "You sure?"} %>
 			<% end %>
+			</h4>
 		<% end %>
     </section>
   </aside>
@@ -24,10 +24,19 @@
 
 	<div class="span8">
 		<% if @blurbs.any? %>
-			<h3><%= @category.title %> (<%= @blurbs.count %>) on <%= DateTime.now.strftime("%B %d, %Y")%></h3>
-			<h3>Why it's relevant</h3>
-			<p><%= @category.description %></p>
-			
+			<h3><%= @category.title %>, <%= DateTime.now.strftime("%B %d, %Y")%></h3>
+			<h3>Stat of the Day</h3>
+			<p><%= raw(@category.description) %></p>
+			<p>
+				<% if user_signed_in? %>
+					<%= form_for(@blurb) do |f| %>
+						<%= f.text_field :name, placeholder: "Enter a headline..." %>
+						<%= f.cktext_area :content, placeholder: "Compose new blurb..." %>
+						<%= f.hidden_field :category_id, value: @category.id %>
+						<%= f.submit "Post", class: "btn btn-large btn-primary" %>
+					<% end %>
+				<% end %>
+			</p>
 			<ol class="blurbs">
 				<%= render @blurbs %>
 			</ol>
