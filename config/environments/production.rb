@@ -7,6 +7,11 @@ Bandwagon::Application.configure do
   #ADDED THIS BECAUSE DEVISE TOLD ME TO DO SO
   config.assets.initialize_on_precompile = false
 
+  #ADDED FOR CKEDITOR
+  config.serve_static_assets = true
+  config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
+  config.assets.compile = false
+
   # Code is not reloaded between requests.
   config.cache_classes = true
 
