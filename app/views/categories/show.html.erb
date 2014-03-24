@@ -22,7 +22,7 @@
 
 		<div class="span8">
 			<% if @blurbs.any? %>
-				<h3><%= @category.title %>, <%= DateTime.now.strftime("%B %d, %Y")%></h3>
+				<h3><%= @category.title %></h3>
 				<h3>Stat of the Day</h3>
 				<p><%= raw(@category.description) %></p>
 				<p>
