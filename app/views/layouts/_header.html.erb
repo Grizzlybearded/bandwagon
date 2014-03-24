@@ -4,8 +4,8 @@
       <%= link_to "TheBandwagn", root_path, id: "logo" %>
       <nav>
         <ul class="nav pull-right">
-            <li class="marquee">Information to join the conversation</li>
-            <li><%= link_to 'Archive', Category.first %></li>
+            
+            <li style="font-weight:bold; font-size:2em;"><%= link_to 'Archive', Category.first %></li>
           <% if user_signed_in? %>
             <li><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></li>
           <% end %>

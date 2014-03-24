@@ -1,9 +1,14 @@
-<h1>TheBandwagn</h1>
-<p>TheBandwagn aims to provide just enough information for you to join the sports conversation.  We are major sports fans and can identify the most important sports events happening at the moment.  We'll deliver that info to you via email twice a week.  Signup!</p>
-
-<section>
+<h1 style="text-align:center">TheBandwagn</h1></br>
+<div style="position: relative;">
+	Do you ever kinda want to know about sports? TheBandwagn Team scours the sports world and identifies the key events/games that people will be talking about.  We'll send you an email each Monday and Thursday with this info.
+</div></br>
+<div style="margin: 0 auto 30px; position: relative; width: 400px;">
+	<h3 style="text-align:center">
+		Join the conversation
+	</h3>
 	<%= form_for @email do |e| %>
-		<%= e.text_field :email, placeholder: "Enter your email here..." %></br>
+		
+		<%= e.text_field :email, placeholder: "Enter your email here...", style: "width:100%" %></br>
 		<%= e.submit "Submit", class: "btn btn-large" %>
 	<% end %>
-</section>
+</div>
