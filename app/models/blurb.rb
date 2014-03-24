@@ -6,5 +6,5 @@ class Blurb < ActiveRecord::Base
 
 	belongs_to :category
 
-	default_scope order('created_at DESC')
+	default_scope order('updated_at DESC')
 end
