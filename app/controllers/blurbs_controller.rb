@@ -14,9 +14,10 @@ class BlurbsController < ApplicationController
 	end
 
 	def destroy
+		@category = Blurb.find(params[:id]).category
 		Blurb.find(params[:id]).destroy
 		flash[:success] = "Blurb destroyed!"
-		redirect_to :back
+		redirect_to @category
 	end
 
 	def edit
