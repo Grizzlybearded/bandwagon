@@ -1,7 +1,18 @@
 Bandwagon::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.default_url_options = { :host => 'thebandwagn.com' }
+
+  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.smtp_settings = {
+    :port =>           '587',
+    :address =>        'smtp.gmail.com',
+    :user_name =>      'marcus.gallagher@gmail.com',
+    :password =>       'not gonna put password here',
+    :domain =>         'thebandwagn.com',
+    :authentication => :plain
+  }
+
 
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development

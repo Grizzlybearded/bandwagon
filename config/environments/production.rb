@@ -2,7 +2,18 @@ Bandwagon::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
   #ADDED THIS BECAUSE DEVISE TOLD ME TO DO SO. NEED TO CHANGE FROM LOCALHOST TO SOMETHING ELSE
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.default_url_options = { :host => 'thebandwagn.com' }
+
+  ActionMailer::Base.smtp_settings = {
+    :port =>           '587',
+    :address =>        'smtp.mandrillapp.com',
+    :user_name =>      ENV['MANDRILL_USERNAME'],
+    :password =>       ENV['MANDRILL_APIKEY'],
+    :domain =>         'heroku.com',
+    :authentication => :plain
+  }
+  ActionMailer::Base.delivery_method = :smtp
+
 
   #ADDED THIS BECAUSE DEVISE TOLD ME TO DO SO
   config.assets.initialize_on_precompile = false
