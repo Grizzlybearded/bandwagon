@@ -1,16 +1,16 @@
 class NewsletterMailer < ActionMailer::Base
-  default from: "TheBandwagn@thebandwagn.com"
+  default from: "thebandwagn@thebandwagn.com"
 
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
   #
   #   en.newsletter_mailer.biweekly.subject
   #
-  def biweekly(category)
+  def biweekly(category, email)
     
     @category = category
     @blurbs = category.blurbs
 
-    mail to: "marcus.gallagher@gmail.com", subject: "test"
+    mail to: email, subject: "TheBandwagon: " + category.title.to_s
   end
 end
