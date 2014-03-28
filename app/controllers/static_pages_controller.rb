@@ -10,12 +10,11 @@ class StaticPagesController < ApplicationController
   end
 
   def test
-  	list = ["marcus.gallagher@gmail.com", "martin.kleinbard@gmail.com"]
+  	list = ["marcus.gallagher@gmail.com"]
   	category = Category.first
   	list.each do |person|
   		NewsletterMailer.biweekly(category, person).deliver
   	end
-
   	redirect_to Category.first
   end
 

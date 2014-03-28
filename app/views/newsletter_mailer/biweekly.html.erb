@@ -9,9 +9,24 @@
 
 <body style="margin-left: 4px; padding: 0;">
 	<table align="center" cellpadding="0" cellspacing="0" width="600" style="border-collapse: collapse;">
+		<tr style="margin-bottom:100px">
+			<td style="text-align:center;">
+				<%= link_to "View in browser", @category_url %>
+			</td>
+		</tr>
 		<tr>
 			<td style="border-bottom: 1px solid #e8e8e8">
 				<h1 style="text-align:center; margin-top:50px;">TheBandwagn</h1>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<h3>Stat of the Day</h3>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom: 1px solid #e8e8e8">
+				<%= @category.description %>
 			</td>
 		</tr>
 		<% @blurbs.each do |b| %>
@@ -24,5 +39,10 @@
 				</td>
 			</tr>
 		<% end %>
+		<tr>
+			<td>
+				<%= link_to "View in browser", @category_url %>
+			</td>
+		</tr>
 	</table>
 </body>
