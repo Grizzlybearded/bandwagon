@@ -8,7 +8,7 @@ Bandwagon::Application.configure do
     :port =>           '587',
     :address =>        'smtp.gmail.com',
     :user_name =>      'marcus.gallagher@gmail.com',
-    :password =>       'nah nothin hurr',
+    :password =>       'coco13nut ',
     :domain =>         'thebandwagn.com',
     :authentication => :plain
   }

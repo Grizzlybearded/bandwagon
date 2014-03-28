@@ -7,6 +7,8 @@ Bandwagon::Application.routes.draw do
   #get "categories/edit"
   #get "categories/delete"
   get "static_pages/home"
+  get "static_pages/about"
+  get "static_pages/test"
 
   root to: 'static_pages#home'
 
