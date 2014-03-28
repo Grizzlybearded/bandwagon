@@ -11,6 +11,6 @@ class NewsletterMailer < ActionMailer::Base
     @category = category
     @blurbs = category.blurbs
 
-    mail to: email, subject: "TheBandwagon: " + category.title.to_s
+    mail to: email, subject: "TheBandwagn: " + category.title.to_s
   end
 end
