@@ -4,7 +4,8 @@ class CollectemailsController < ApplicationController
 		@email = Collectemail.new(collectemails_params)
 		@find_email = Collectemail.find_by_email_and_send_email(@email.email, false)
 		
-		if @find_email.nil?	
+		if @find_email.nil?
+			@email.generate_token
 			if @email.save
 				flash[:success] = "You'll receive our next email.  In the meantime, check out our archive!"
 				redirect_to Category.first

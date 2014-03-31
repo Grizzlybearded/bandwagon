@@ -4,7 +4,7 @@ class Collectemail < ActiveRecord::Base
 	validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }, uniqueness: true
 	validates :unsubscribe_token, presence: true
 
-	before_create :generate_token
+	#before_save :generate_token
 
 	def generate_token
 		self.unsubscribe_token = loop do
