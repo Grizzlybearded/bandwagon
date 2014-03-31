@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140323210718) do
+ActiveRecord::Schema.define(version: 20140330161448) do
 
   create_table "blurbs", force: true do |t|
     t.text     "content"
@@ -32,6 +32,8 @@ ActiveRecord::Schema.define(version: 20140323210718) do
     t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "unsubscribe_token"
+    t.boolean  "send_email",        default: true
   end
 
   create_table "users", force: true do |t|

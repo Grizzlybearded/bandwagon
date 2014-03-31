@@ -6,10 +6,11 @@ Bandwagon::Application.routes.draw do
   #get "categories/create"
   #get "categories/edit"
   #get "categories/delete"
-  get "static_pages/home"
-  
+  get "static_pages/home"  
   get "static_pages/test"
   get "static_pages/eblast"
+
+  match '/collectemails/unsubscribe/:unsubscribe_token' => 'collectemails#unsubscribe', as: 'unsubscribe', via: [:get, :post]
 
   root to: 'static_pages#home'
 
