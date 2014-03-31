@@ -19,7 +19,7 @@ class StaticPagesController < ApplicationController
   end
 
   def eblast
-  	list = Collectemail.all
+  	list = Collectemail.where(send_email: true)
   	category = Category.first
   	list.each do |person|
   		NewsletterMailer.biweekly(category, person.email).deliver

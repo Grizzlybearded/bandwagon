@@ -41,7 +41,19 @@
 		<% end %>
 		<tr>
 			<td>
-				<%= link_to "View in browser", @category_url %> <%= link_to 'Unsubscribe', @unsubscribe %>
+				<!-- Facebook -->
+				<a href="http://www.facebook.com/sharer.php?u=<%= @category_url %>" target="_blank"><img src="http://www.simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" style ="width: 35px; padding: 5px; border: 0; box-shadow: 0; display: inline;" /></a>
+				<!-- Twitter -->
+				<a href="http://twitter.com/share?url=<%= @category_url %>&text=The week's must-know sports news in just a few short sound bites #thebandwagn @thebandwagn" target="_blank"><img src="http://www.simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" style ="width: 35px; padding: 5px; border: 0; box-shadow: 0; display: inline;" /></a>
+				<!-- LinkedIn -->
+				<a href="http://www.linkedin.com/shareArticle?mini=true&url=<%= @category_url %>" target="_blank"><img src="http://www.simplesharebuttons.com/images/somacro/linkedin.png" alt="LinkedIn" style ="width: 35px; padding: 5px; border: 0; box-shadow: 0; display: inline;" /></a>
+				<!-- Email -->
+				<a href="mailto:?Subject=TheBandwagn&Body=The%20week's%20must-know%20sports%20news%20in%20just%20a%20few%20short%20sound%20bites!%20#thebandwagn <%= @category_url %>"><img src="http://www.simplesharebuttons.com/images/somacro/email.png" alt="Email" style ="width: 35px; padding: 5px; border: 0; box-shadow: 0; display: inline;" /></a>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<%= link_to "View in browser", @category_url %> | <%= link_to 'Unsubscribe', @unsubscribe %>
 			</td>
 		</tr>
 	</table>
