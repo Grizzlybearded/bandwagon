@@ -2,6 +2,8 @@ class Collectemail < ActiveRecord::Base
 
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 	validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }, uniqueness: true
+	validates :unsubscribe_token, presence: true
+
 	before_create :generate_token
 
 	def generate_token
