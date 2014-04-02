@@ -1,0 +1,19 @@
+<div style="background: #3D9AD1; height: 200px; margin: 0 auto; width:600px;">
+	<img src="/assets/fans-losing-it.jpeg" style="opacity: 0.15; background: rgb(61,154,209);">
+	<h1 style="position: absolute; font-size:300%; color: #ffffff; margin-top: -115px; margin-left: 150px; ;text-align:center;">TheBandwagn</h1>
+</div>
+</br>
+
+<ul style="margin: 0 auto; text-align:center;">
+	<%= link_to "<< Back to signup", root_path %>
+	</br></br>
+	<% @categories.each do |c| %>
+		<li style="list-style-type:none;">
+			<%= link_to "TheBandwagn from " + c.created_at.strftime("%B %e").to_s, c %>
+			<% if user_signed_in? %>
+				<%= link_to "Edit", edit_category_path(c) %>
+				<%= link_to "Destroy", c, method: :delete, data: {confirm: "You sure?"} %>
+			<% end %>
+		</li>
+	<% end %>
+</ul>

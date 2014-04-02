@@ -1,59 +1,41 @@
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+<div style="background: #3D9AD1; height: 200px; margin: 0 auto; width:600px;">
+	<img src="/assets/fans-losing-it.jpeg" style="opacity: 0.15; background: rgb(61,154,209);">
+	<h1 style="position: absolute; font-size:300%; color: #ffffff; margin-top: -115px; margin-left: 150px; ;text-align:center;">TheBandwagn</h1>
+</div>
+<div style="margin: 0 auto; width:600px;">
 
-  ga('create', 'UA-49490842-1', 'thebandwagn.com');
-  ga('send', 'pageview');
+	<% if user_signed_in? %>
+		<%= link_to 'Create a new email', new_category_path %>
+	<% end %>
 
-</script>
-
-
-<div style="margin-bottom:10px;">
-	<div class="row">
-	  <aside class="span4">
-	    <section>
-	    	<% if user_signed_in? %>
-	    		<%= link_to 'Create a new email', new_category_path %>
-	    	<% end %>
-
-			<% @categories.each do |c| %>
-				<h4><%= link_to_unless_current(c.title, c) %>
+	<div>
+		<% if @blurbs.any? %>
+			<h3 style="text-align:center;"><%= @category.title %></h3>
+			<div style="text-align:center;"><%= @category.created_at.strftime("%B %e, %Y").to_s %></div>
+			<div style="text-align:center;">
+				<%= link_to "<< Signup", root_path %> | <%= link_to "<< Archive", categories_path %>
+			</div>
+			<h4>STAT OF THE DAY</h4>
+			<p><%= raw(@category.description) %></p>
+			<p>
 				<% if user_signed_in? %>
-					<%= link_to "Edit", edit_category_path(c) %>
-					<%= link_to "Destroy", c, method: :delete, data: {confirm: "You sure?"} %>
-				<% end %>
-				</h4>
-			<% end %>
-	    </section>
-	  </aside>
-
-
-
-
-		<div class="span8">
-			<% if @blurbs.any? %>
-				<h3><%= @category.title %></h3>
-				<h3>Stat of the Day</h3>
-				<p><%= raw(@category.description) %></p>
-				<p>
-					<% if user_signed_in? %>
-						<%= form_for(@blurb) do |f| %>
-							<%= f.text_field :name, placeholder: "Enter a headline..." %>
-							<%= f.cktext_area :content, placeholder: "Compose new blurb..." %>
-							<%= f.hidden_field :category_id, value: @category.id %>
-							<%= f.submit "Post", class: "btn btn-large btn-primary" %>
-						<% end %>
+					<%= form_for(@blurb) do |f| %>
+						<%= f.text_field :name, placeholder: "Enter a headline..." %>
+						<%= f.cktext_area :content, placeholder: "Compose new blurb..." %>
+						<%= f.hidden_field :category_id, value: @category.id %>
+						<%= f.submit "Post", class: "btn btn-large btn-primary" %>
 					<% end %>
-				</p>
-				<ol class="blurbs">
-					<%= render @blurbs %>
-				</ol>
+				<% end %>
+			</p>
+			<ol class="blurbs">
+				<%= render @blurbs %>
+			</ol>
 
-			<% else %>
-				<%= "Not much to mention right now.  This sport will probs become relevant in a few months." %>
-			<% end %>
-		</div>
+		<% else %>
+			<%= "Not much to mention right now.  This sport will probs become relevant in a few months." %>
+		<% end %>
 	</div>
 </div></br>
+
+
+

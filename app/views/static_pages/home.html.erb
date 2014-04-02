@@ -17,28 +17,40 @@
 
   ga('create', 'UA-49490842-1', 'thebandwagn.com');
   ga('send', 'pageview');
-
 </script>
 
 
 
-<h1 style="text-align:center; margin-top:50px;">TheBandwagn</h1></br>
-<div style="margin: 0 auto; text-align:center; position: relative; width:500px;">
-	Do you ever kinda want to know about sports? <br> TheBandwagn Team scours the sports world and identifies key events, information, and games that people will be talking about.  Enter your email and we'll send you this info every Monday and Friday.
-</div></br>
-<div style="margin: 0 auto 30px; position: relative; width: 400px;">
-	<h3 style="text-align:center">
+<div style="background: #3D9AD1; height: 200px; margin: 0 auto; width:600px;">
+	<img src="/assets/fans-losing-it.jpeg" style="opacity: 0.15; background: rgb(61,154,209);">
+	<h1 style="position: absolute; font-size:300%; color: #ffffff; margin-top: -115px; margin-left: 150px; ;text-align:center;">TheBandwagn</h1>
+</div>
+</br>
+
+<div style="margin: 0 auto; text-align:center; width:600px; ">
+	Do you ever kinda want to know about sports? <br> TheBandwagn Team scours the sports world and identifies key events, information, and games that people will be talking about. Enter your email and we'll send you this info every Monday and Friday.
+	</br>
+	<h3 style="text-align:center;">
 		Join the conversation
 	</h3>
-	<%= form_for @email do |e| %>
-		
-		<%= e.text_field :email, placeholder: "Enter your email here...", style: "width:100%" %></br>
-		<div style="text-align: center"><%= e.submit "Submit", class: "btn btn-large" %></div>
-	<% end %>
 </div>
+
+<div style="margin: 0 auto; background: #3D9AD1; height: 150px; width: 600px;">
+	<div style="margin-left:40px; width: 500px; padding-top:26px;">
+		<%= form_for @email do |e| %>
+			
+			<%= e.text_field :email, placeholder: "Enter your email here...", style: "width:100%; height:40px; border:solid;" %></br>
+			<div style="text-align: center"><%= e.submit "Subscribe", class: "btn btn-large" %></div>
+		<% end %>
+	</div>
+</div>
+
+</br>
+
 <div style="margin: 0 auto; text-align:center; position: relative; width:500px;">
-	Check out TheBandwagn's most recent edition <%= link_to "here.", @first %>
+	Check out TheBandwagn's most recent edition <%= link_to "here", @first %> or view our <%= link_to "archive.", categories_path %>
 	<br>
+
 	<br>
 	<!-- I got these buttons from simplesharebuttons.com -->
 	<div id="share-buttons">

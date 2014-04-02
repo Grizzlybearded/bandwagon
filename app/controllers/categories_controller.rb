@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-  before_filter :authenticate_user!, except: [:show]
+  before_filter :authenticate_user!, except: [:show, :index]
 
   def show
   	@categories = Category.all
@@ -42,6 +42,10 @@ class CategoriesController < ApplicationController
   	Category.find(params[:id]).destroy
   	flash[:success] = "Email destroyed!"
   	redirect_to Category.first
+  end
+
+  def index
+    @categories = Category.all
   end
 
  private

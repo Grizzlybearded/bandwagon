@@ -15,7 +15,7 @@ Bandwagon::Application.routes.draw do
   root to: 'static_pages#home'
 
   resources :blurbs, only: [:create, :destroy, :update, :edit]
-  resources :categories, only: [:show, :create, :destroy, :update, :edit, :new]
+  resources :categories, only: [:show, :create, :destroy, :update, :edit, :new, :index]
   resources :collectemails, only: [:create]
 
   #resources :categories

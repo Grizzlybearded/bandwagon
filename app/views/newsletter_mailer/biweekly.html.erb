@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
  <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <title>Demystifying Email Design</title>
+  <title>TheBandwagn</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 </html>
@@ -15,13 +15,13 @@
 			</td>
 		</tr>
 		<tr>
-			<td style="border-bottom: 1px solid #e8e8e8">
-				<h1 style="text-align:center; margin-top:50px;">TheBandwagn</h1>
+			<td style="border-bottom: 1px solid #e8e8e8; height: 150px; background: #3D9AD1;">
+				<h1 style="text-align:center; color: #ffffff; font-family: Helvetica Neue; font-size: 200%;">TheBandwagn</h1>
 			</td>
 		</tr>
 		<tr>
 			<td>
-				<h3>Stat of the Day</h3>
+				<h3>STAT OF THE DAY</h3>
 			</td>
 		</tr>
 		<tr>
@@ -31,7 +31,7 @@
 		</tr>
 		<% @blurbs.each do |b| %>
 			<tr>
-				<td><h3><%= raw(b.name) %></h3></td>
+				<td><h3><%= raw(b.name.upcase) %></h3></td>
 			</tr>
 			<tr>
 				<td style="border-bottom: 1px solid #e8e8e8">
@@ -49,7 +49,7 @@
 		</tr>
 		<tr>
 			<td>
-				<%= link_to "View in browser", @category_url %> | <%= link_to 'Unsubscribe', @unsubscribe %>
+				<%= link_to 'Unsubscribe', @unsubscribe %> | <%= link_to "View in browser", @category_url %>
 			</td>
 		</tr>
 	</table>

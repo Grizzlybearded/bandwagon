@@ -1,9 +1,9 @@
 <li>
 	<% if !blurb.name.nil? %>
 	  <span class="content">
-	  	<h5>
-	  		<%= blurb.name %>
-	  	</h5>
+	  	<h4>
+	  		<%= blurb.name.upcase %>
+	  	</h4>
 	  	<% if user_signed_in? %>
 			<%= link_to 'Edit', edit_blurb_path(blurb) %>
 			<%= link_to 'Delete', blurb, method: :delete, data: {confirm: "You sure?"} %>
