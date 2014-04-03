@@ -7,13 +7,15 @@ class NewsletterMailer < ActionMailer::Base
   #   en.newsletter_mailer.biweekly.subject
   #
   def biweekly(category, email)
-    
+
     @category = category
     @blurbs = category.blurbs
     @category_url = category_url(@category)
     @collect_email = Collectemail.find_by_email(email)
     @unsubscribe = unsubscribe_url(@collect_email.unsubscribe_token)
 
+    attachments.inline['fans-losing-it2.png'] = File.read('app/assets/images/fans-losing-it2.png')
+    
     mail to: email, subject: "TheBandwagn: " + category.title.to_s
   end
 end
