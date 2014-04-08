@@ -11,7 +11,7 @@ class StaticPagesController < ApplicationController
 
   def test
   	list = ["marcus.gallagher@gmail.com", "martin.kleinbard@gmail.com"]
-  	category = Category.first
+  	category = Category.where(show_to_users: true).first
   	list.each do |person|
   		NewsletterMailer.biweekly(category, person).deliver
   	end
@@ -20,7 +20,7 @@ class StaticPagesController < ApplicationController
 
   def eblast
   	list = Collectemail.where(send_email: true)
-  	category = Category.first
+  	category = Category.where(show_to_users: true).first
   	list.each do |person|
   		NewsletterMailer.biweekly(category, person.email).deliver
   	end

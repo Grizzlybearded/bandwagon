@@ -2,6 +2,8 @@ class CategoriesController < ApplicationController
   before_filter :authenticate_user!, except: [:show, :index]
 
   def show
+    @category_for_email = Category.where(show_to_users: true).first
+
   	@categories = Category.all
   	@category = Category.find(params[:id])
   	@blurbs = @category.blurbs
@@ -45,7 +47,8 @@ class CategoriesController < ApplicationController
   end
 
   def index
-    @categories = Category.all
+    @categories_for_users = Category.where(show_to_users: true)
+    @categories_for_mm = Category.all
   end
 
  private

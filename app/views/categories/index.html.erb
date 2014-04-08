@@ -7,13 +7,20 @@
 <ul style="margin: 0 auto; text-align:center;">
 	<%= link_to "<< Back to signup", root_path %>
 	</br></br>
-	<% @categories.each do |c| %>
-		<li style="list-style-type:none;">
-			<%= link_to "TheBandwagn from " + c.created_at.strftime("%B %e").to_s, c %>
-			<% if user_signed_in? %>
-				<%= link_to "Edit", edit_category_path(c) %>
-				<%= link_to "Destroy", c, method: :delete, data: {confirm: "You sure?"} %>
-			<% end %>
-		</li>
+	<% if user_signed_in? %>
+		<% @categories_for_mm.each do |c| %>
+			<li style="list-style-type:none;">
+				<%= link_to "TheBandwagn from " + c.created_at.strftime("%B %e").to_s, c %> |
+				<%= link_to "Edit", edit_category_path(c) %> |
+				<%= link_to "Destroy", c, method: :delete, data: {confirm: "You sure?"} %> |
+				<%= c.show_to_users %>
+			</li>
+		<% end %>
+	<% else %>
+		<% @categories_for_users.each do |c| %>
+			<li style="list-style-type:none;">
+				<%= link_to "TheBandwagn from " + c.created_at.strftime("%B %e").to_s, c %>
+			</li>
+		<% end %>
 	<% end %>
 </ul>
