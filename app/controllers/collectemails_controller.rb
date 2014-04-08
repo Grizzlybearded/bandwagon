@@ -10,7 +10,7 @@ class CollectemailsController < ApplicationController
 				flash[:success] = "You'll receive our next email.  In the meantime, check out our archive!"
 				redirect_to Category.first
 			else
-				flash[:notice] = "You're email was not added to our distribution."
+				flash[:notice] = "Your email was not added to our distribution."
 				redirect_to root_path
 			end
 		else
