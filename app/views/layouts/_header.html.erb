@@ -5,7 +5,7 @@
       <nav>
         <ul class="nav pull-right">
             <li style="font-weight:bold; font-size:2em;"><%= link_to 'Home', root_path %></li>
-            <li style="font-weight:bold; font-size:2em;"><%= link_to 'Archive', Category.first %></li>
+            <li style="font-weight:bold; font-size:2em;"><%= link_to 'Archive', categories_path %></li>
           <% if user_signed_in? %>
             <li><%= link_to 'Test Email', static_pages_test_path, confirm: 'Are you sure?' %></li>
             <li><%= link_to 'E-Blast', static_pages_eblast_path, confirm: 'Are you sure?' %></li>
