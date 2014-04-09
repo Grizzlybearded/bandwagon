@@ -10,6 +10,11 @@ Bandwagon::Application.routes.draw do
   get "static_pages/test"
   get "static_pages/eblast"
 
+  #The following commented out routes don't work
+  #get ':categories', to: 'categories#index', as: :archive
+  #get 'categories/:id', to: 'categories#show', as: 'digest'
+  #get 'categories/:id', to: 'categories#show', as: :digest
+
   match '/collectemails/unsubscribe/:unsubscribe_token' => 'collectemails#unsubscribe', as: 'unsubscribe', via: [:get, :post]
 
   root to: 'static_pages#home'
