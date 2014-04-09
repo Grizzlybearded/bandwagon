@@ -1,6 +1,6 @@
 <div style="background: #3D9AD1; height: 200px; margin: 0 auto; width:600px;">
 	<img src="/assets/fans-losing-it.jpeg" style="opacity: 0.15; background: rgb(61,154,209);">
-	<h1 style="position: absolute; font-size:300%; color: #ffffff; margin-top: -115px; margin-left: 150px; ;text-align:center;">TheBandwagn</h1>
+	<h1 style="position: absolute; font-size:300%; color: #ffffff; margin-top: -115px; margin-left: 130px; ;text-align:center;">TheBandwagn</h1>
 </div>
 <div style="margin: 0 auto; width:600px;">
 
@@ -15,12 +15,12 @@
 	<br>
 	<div>
 		<% if @blurbs.any? %>
-			<h3 style="text-align:center;"><%= @category.title %></h3>
-			<div style="text-align:center;"><%= @category.created_at.strftime("%B %e, %Y").to_s %></div>
+			<h2 style="text-align:center;"><%= @category.title %></h2>
+			<div style="text-align:center;"><%= @category.created_at.strftime("%B %e, %Y").to_s %></div><br>
 			<div style="text-align:center;">
 				<%= link_to "<< Signup", root_path %> | <%= link_to "<< Archive", categories_path %>
 			</div>
-			<h4>STAT OF THE DAY</h4>
+			<h3>STAT OF THE DAY</h3>
 			<p><%= raw(@category.description) %></p>
 			<p>
 				<% if user_signed_in? %>
