@@ -15,7 +15,14 @@
 	<div>
 		<% if @blurbs.any? %>
 			<h2 style="text-align:center;"><%= @category.title %></h2>
-			<div style="text-align:center;"><%= @category.created_at.strftime("%B %e, %Y").to_s %></div><br>
+
+			<% if @category.send_date.present? %>
+				<div style="text-align:center;"><%= @category.send_date.strftime("%B %e, %Y").to_s %></div>
+			<% else %>
+				<div style="text-align:center;"><%= @category.created_at.strftime("%B %e, %Y").to_s %></div>
+			<% end %>
+
+			<br>
 			<div style="text-align:center;">
 				<%= link_to "<< Signup", root_path %> | <%= link_to "<< Archive", categories_path %>
 			</div>
