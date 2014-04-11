@@ -26,7 +26,7 @@ class StaticPagesController < ApplicationController
   		NewsletterMailer.biweekly(category, person.email).deliver
   	end
 
-  	redirect_to Category.first
+  	redirect_to Category.where(show_to_users:true).first
   end
 
 end
