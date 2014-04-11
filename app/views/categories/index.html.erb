@@ -22,7 +22,11 @@
 	<% else %>
 		<% @categories_for_users.each do |c| %>
 			<li style="list-style-type:none;">
-				<%= link_to "TheBandwagn from " + c.created_at.strftime("%B %e").to_s, c %>
+				<% if c.send_date.present? %>
+					<%= link_to "TheBandwagn from " + c.send_date.strftime("%B %e").to_s, c %>
+				<% else %>
+					<%= link_to "TheBandwagn from " + c.created_at.strftime("%B %e").to_s, c %>
+				<% end %>
 			</li>
 		<% end %>
 	<% end %>
