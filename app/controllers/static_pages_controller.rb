@@ -15,7 +15,7 @@ class StaticPagesController < ApplicationController
   	list.each do |person|
   		NewsletterMailer.biweekly(category, person).deliver
   	end
-  	redirect_to Category.first
+  	redirect_to Category.where(show_to_users: true).first
   end
 
   def eblast
