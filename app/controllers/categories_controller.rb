@@ -5,7 +5,7 @@ class CategoriesController < ApplicationController
     @category_for_email = Category.where(show_to_users: true).first
 
   	@categories = Category.all
-  	@category = Category.find(params[:id])
+  	@category = Category.find_by_title(params[:id])
   	@blurbs = @category.blurbs
   	@blurb = @category.blurbs.build
   end

@@ -11,7 +11,8 @@ Bandwagon::Application.routes.draw do
   get "static_pages/eblast"
 
   #The following commented out routes don't work
-  #get ':categories', to: 'categories#index', as: :archive
+  get 'archive', to: 'categories#index', as: :archive
+  #get ':id', to: 'categories#show', as: :posts
   #get 'categories/:id', to: 'categories#show', as: 'digest'
   #get 'categories/:id', to: 'categories#show', as: :digest
 
@@ -20,7 +21,7 @@ Bandwagon::Application.routes.draw do
   root to: 'static_pages#home'
 
   resources :blurbs, only: [:create, :destroy, :update, :edit]
-  resources :categories, only: [:show, :create, :destroy, :update, :edit, :new, :index]
+  resources :categories, only: [:create, :destroy, :update, :edit, :new, :show]
   resources :collectemails, only: [:create]
 
   #resources :categories
