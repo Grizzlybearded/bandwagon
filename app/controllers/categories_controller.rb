@@ -26,11 +26,11 @@ class CategoriesController < ApplicationController
   end
 
   def edit
-  	@category = Category.find(params[:id])
+  	@category = Category.find_by_title(params[:id])
   end
 
   def update
-  	@category = Category.find(params[:id])
+  	@category = Category.find_by_title(params[:id])
   	if @category.update_attributes(category_params)
   		flash[:success] = "Email updated!"
   		redirect_to @category
@@ -41,7 +41,7 @@ class CategoriesController < ApplicationController
   end
 
   def destroy
-  	Category.find(params[:id]).destroy
+  	Category.find_by_title(params[:id]).destroy
   	flash[:success] = "Email destroyed!"
   	redirect_to Category.first
   end
