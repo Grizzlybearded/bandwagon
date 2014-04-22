@@ -35,20 +35,16 @@
 <div style="margin: 0 auto; background: #3D9AD1; height: 150px; width: 600px;">
 	<div style="margin-left:40px; width: 500px; padding-top:26px;">
 		<%= form_for @email do |e| %>
-			
 			<%= e.text_field :email, placeholder: "Enter your email here...", style: "width:100%; height:40px; border:solid; font-family: helvetica,arial,sans-serif; font-size: 16px;" %></br>
 			<div style="text-align: center"><%= e.submit "Subscribe", class: "btn btn-large", style: "font-family: helvetica,arial,sans-serif; font-size: 16px;" %></div>
 		<% end %>
 	</div>
 </div>
-
 </br>
 
 <div style="margin: 0 auto; text-align:center; position: relative; width:500px; font-size: 125%; line-height: 150%;">
-	Check out TheBandwagn's most recent edition <%= link_to "here", @first %> or view our <%= link_to "archive.", archive_path %>
-	<br>
-
-	<br>
+	Check out our <%= link_to "Archive", archive_path %>.
+	<br><br>
 	<!-- I got these buttons from simplesharebuttons.com -->
 	<div id="share-buttons">
 	 
@@ -68,3 +64,45 @@
 </div>
 <br>
 <br>
+<br>
+<br>
+<br>
+<br>
+
+<div  style="margin: 0 auto; text-align:center; width:600px; border-top: 1px solid #eaeaea; border-bottom: 1px solid #eaeaea;">
+		<h4 style="text-align:center;">TheBandwagn from <%= @category.send_date.strftime("%B %e, %Y").to_s %></h4>
+</div>
+
+<div style="margin: 0 auto; width:600px;">
+	<div>
+		<% if @blurbs.any? %>
+			<h2 style="text-align:center;"><%= @category.title %></h2>
+			<h3>STAT OF THE DAY</h3>
+			<p><%= raw(@category.description) %></p>
+			<p>
+				<% if user_signed_in? %>
+					<%= form_for(@blurb) do |f| %>
+						<%= f.text_field :name, placeholder: "Enter a headline..." %>
+						<%= f.cktext_area :content, placeholder: "Compose new blurb..." %>
+						<%= f.hidden_field :category_id, value: @category.id %>
+						<%= f.submit "Post", class: "btn btn-large btn-primary" %>
+					<% end %>
+				<% end %>
+			</p>
+			<ol class="blurbs">
+				<%= render @blurbs %>
+			</ol>
+
+		<% else %>
+			<%= "Not much to mention right now.  This sport will probs become relevant in a few months." %>
+		<% end %>
+	</div>
+<div>
+<br>
+<br>
+
+
+
+
+
+

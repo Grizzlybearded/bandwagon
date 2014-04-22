@@ -8,6 +8,8 @@ class CategoriesController < ApplicationController
   	@category = Category.find_by_title(params[:id])
   	@blurbs = @category.blurbs
   	@blurb = @category.blurbs.build
+
+    @email = Collectemail.new
   end
 
   def new
