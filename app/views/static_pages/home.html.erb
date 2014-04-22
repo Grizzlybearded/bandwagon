@@ -79,16 +79,6 @@
 			<h2 style="text-align:center;"><%= @category.title %></h2>
 			<h3>STAT OF THE DAY</h3>
 			<p><%= raw(@category.description) %></p>
-			<p>
-				<% if user_signed_in? %>
-					<%= form_for(@blurb) do |f| %>
-						<%= f.text_field :name, placeholder: "Enter a headline..." %>
-						<%= f.cktext_area :content, placeholder: "Compose new blurb..." %>
-						<%= f.hidden_field :category_id, value: @category.id %>
-						<%= f.submit "Post", class: "btn btn-large btn-primary" %>
-					<% end %>
-				<% end %>
-			</p>
 			<ol class="blurbs">
 				<%= render @blurbs %>
 			</ol>
