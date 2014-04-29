@@ -37,12 +37,20 @@ textarea {
   margin-top: 50px;
 }
 
+.mycat {
+  
+}
+
 /* make the website responsive */
 
 @media screen and (max-width: 960px){
   .wrap {
     width: 100%;
     margin: 0;
+  }
+  .mycat {
+    margin-left: 2px;
+    margin-right: 2px;
   }
 }
 
