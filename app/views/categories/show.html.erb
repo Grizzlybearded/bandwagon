@@ -1,52 +1,55 @@
-<div style="height: 200px; margin: 0 auto; width:600px;">
-	<img src="/assets/fans-for-web.png">
-</div>
-<div style="margin: 0 auto; width:600px;">
-
-	<% if user_signed_in? %>
-		<%= link_to 'Create a new email', new_category_path %><br>
-		<% if @category == @category_for_email %>
-			This is the email that will be sent.
-		<% else %>
-			This is NOT the email that will be sent.
-		<% end %>
-	<% end %>
-	<br>
-	<div>
-		<% if @blurbs.any? %>
-			<h2 style="text-align:center;"><%= @category.title %></h2>
-
-			<% if @category.send_date.present? %>
-				<div style="text-align:center;"><%= @category.send_date.strftime("%B %e, %Y").to_s %></div>
-			<% else %>
-				<div style="text-align:center;"><%= @category.created_at.strftime("%B %e, %Y").to_s %></div>
-			<% end %>
-
-			<br>
-			<div style="text-align:center;">
-				<%= link_to "<< Signup", root_path %> | <%= link_to "<< Archive", archive_path %>
-			</div>
-			<h3>STAT OF THE DAY</h3>
-			<p><%= raw(@category.description) %></p>
-			<p>
-				<% if user_signed_in? %>
-					<%= form_for(@blurb) do |f| %>
-						<%= f.text_field :name, placeholder: "Enter a headline..." %>
-						<%= f.cktext_area :content, placeholder: "Compose new blurb..." %>
-						<%= f.hidden_field :category_id, value: @category.id %>
-						<%= f.submit "Post", class: "btn btn-large btn-primary" %>
-					<% end %>
-				<% end %>
-			</p>
-			<ol class="blurbs">
-				<%= render @blurbs %>
-			</ol>
-
-		<% else %>
-			<%= "Not much to mention right now.  This sport will probs become relevant in a few months." %>
-		<% end %>
+<div class="wrapme">
+	<div style="height: 200px; width: 600px;">
+		<img src="/assets/fans-for-web.png">
 	</div>
-</div></br>
+
+	<div style="margin: 0 auto;">
+
+		<% if user_signed_in? %>
+			<%= link_to 'Create a new email', new_category_path %><br>
+			<% if @category == @category_for_email %>
+				This is the email that will be sent.
+			<% else %>
+				This is NOT the email that will be sent.
+			<% end %>
+		<% end %>
+		<br>
+		<div>
+			<% if @blurbs.any? %>
+				<h2 style="text-align:center;"><%= @category.title %></h2>
+
+				<% if @category.send_date.present? %>
+					<div style="text-align:center;"><%= @category.send_date.strftime("%B %e, %Y").to_s %></div>
+				<% else %>
+					<div style="text-align:center;"><%= @category.created_at.strftime("%B %e, %Y").to_s %></div>
+				<% end %>
+
+				<br>
+				<div style="text-align:center;">
+					<%= link_to "<< Signup", root_path %> | <%= link_to "<< Archive", archive_path %>
+				</div>
+				<h3>STAT OF THE DAY</h3>
+				<p><%= raw(@category.description) %></p>
+				<p>
+					<% if user_signed_in? %>
+						<%= form_for(@blurb) do |f| %>
+							<%= f.text_field :name, placeholder: "Enter a headline..." %>
+							<%= f.cktext_area :content, placeholder: "Compose new blurb..." %>
+							<%= f.hidden_field :category_id, value: @category.id %>
+							<%= f.submit "Post", class: "btn btn-large btn-primary" %>
+						<% end %>
+					<% end %>
+				</p>
+				<ol class="blurbs">
+					<%= render @blurbs %>
+				</ol>
+
+			<% else %>
+				<%= "Not much to mention right now.  This sport will probs become relevant in a few months." %>
+			<% end %>
+		</div>
+	</div></br>
+</div>
 
 
 
