@@ -8,7 +8,7 @@ class CollectemailsController < ApplicationController
 			@email.generate_token
 			if @email.save
 				flash[:success] = "You'll receive our next email.  In the meantime, check out our archive!"
-				redirect_to Category.first
+				redirect_to root_path
 			else
 				flash[:notice] = "Your email was not added to our distribution."
 				redirect_to root_path
@@ -16,7 +16,7 @@ class CollectemailsController < ApplicationController
 		else
 			@find_email.update_attributes(send_email: true)
 			flash[:success] = "You'll receive our next email.  In the meantime, check out our archive!"
-			redirect_to Category.first
+			redirect_to root_path
 		end
 	end
 
