@@ -11,7 +11,7 @@ class StaticPagesController < ApplicationController
   end
 
   def test
-  	list = ["andrea.kleinbard@gmail.com"]
+  	list = ["marcus.gallagher@gmail.com","martin.kleinbard@gmail.com"]
   	category = Category.where(show_to_users: true).first
   	list.each do |person|
   		NewsletterMailer.biweekly(category, person).deliver
