@@ -20,7 +20,7 @@ class StaticPagesController < ApplicationController
   end
 
   def eblast
-  	list = ["marcus.gallagher@gmail.com", "martin.kleinbard@gmail.com"]
+  	list = ["marcus.gallagher@gmail.com", "martin.kleinbard@gmail.com", "marcus@thebandwagn.com", "conductor@thebandwagn.com"]
     #list = Collectemail.where(send_email: true)
   	category = Category.where(show_to_users: true).first
     category.update_attributes(send_date: Date.today)
