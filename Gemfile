@@ -20,6 +20,7 @@ group :production do
 	gem 'rails_12factor', '0.0.2'
 end
 
+# the text editor we use
 gem 'ckeditor'
 
 # Use SCSS for stylesheets

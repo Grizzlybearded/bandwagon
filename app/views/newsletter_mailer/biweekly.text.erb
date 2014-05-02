@@ -1,3 +1,17 @@
-NewsletterMailer#biweekly
+<%= link_to "View in browser", @category_url %>
 
-<%= @greeting %>, find me in app/views/app/views/newsletter_mailer/biweekly.text.erb
+STAT OF THE DAY
+<%= @category.description %>
+
+<%= @blurbs.each do |b| %>
+
+	<%= raw(b.name.upcase) %>
+	<%= raw(b.content) %>
+
+<% end %>
+
+Enjoying TheBandwagn? Forward to your friends!
+
+Have some feedback? Email us at conductor@thebandwagn.com
+
+<%= link_to 'Unsubscribe', @unsubscribe %> | <%= link_to "View in browser", @category_url %>
