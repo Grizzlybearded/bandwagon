@@ -20,14 +20,17 @@ class StaticPagesController < ApplicationController
   end
 
   def eblast
-  	list = Collectemail.where(send_email: true)
+  	list = ["marcus.gallagher@gmail.com", "martin.kleinbard@gmail.com"]
+    #list = Collectemail.where(send_email: true)
   	category = Category.where(show_to_users: true).first
     category.update_attributes(send_date: Date.today)
   	list.each do |person|
-  		NewsletterMailer.biweekly(category, person.email).deliver
+  		#NewsletterMailer.biweekly(category, person.email).deliver
+      NewsletterMailer.biweekly(category, person).deliver
+      puts person
   	end
 
-  	redirect_to Category.where(show_to_users:true).first
+  	redirect_to category
   end
 
 end
