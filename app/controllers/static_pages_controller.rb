@@ -20,13 +20,13 @@ class StaticPagesController < ApplicationController
   end
 
   def eblast
-  	list = ["marcus.gallagher@gmail.com", "thebandwagn@thebandwagn.com", "marcus@thebandwagn.com", "conductor@thebandwagn.com"]
-    #list = Collectemail.where(send_email: true)
+  	#list = ["marcus.gallagher@gmail.com", "thebandwagn@thebandwagn.com", "marcus@thebandwagn.com", "conductor@thebandwagn.com"]
+    list = Collectemail.where(send_email: true)
   	category = Category.where(show_to_users: true).first
     category.update_attributes(send_date: Date.today)
   	list.each do |person|
-  		#NewsletterMailer.biweekly(category, person.email, "real").deliver
-      NewsletterMailer.biweekly(category, person, "real").deliver
+  		NewsletterMailer.biweekly(category, person.email, "real").deliver
+      #NewsletterMailer.biweekly(category, person, "real").deliver
       puts person
   	end
 
