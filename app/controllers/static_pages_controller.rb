@@ -11,10 +11,10 @@ class StaticPagesController < ApplicationController
   end
 
   def test
-  	list = ["marcus.gallagher@gmail.com", "marcus@thebandwagn.com", "thebandwagn@thebandwagn.com"]
+  	list = ["marcus.gallagher@gmail.com", "marcus@thebandwagn.com", "martin.kleinbard@gmail.com", "martin@thebandwagn.com"]
   	category = Category.where(show_to_users: true).first
   	list.each do |person|
-  		NewsletterMailer.biweekly(category, person).deliver
+  		NewsletterMailer.biweekly(category, person, "test").deliver
   	end
   	redirect_to Category.where(show_to_users: true).first
   end
@@ -25,8 +25,8 @@ class StaticPagesController < ApplicationController
   	category = Category.where(show_to_users: true).first
     category.update_attributes(send_date: Date.today)
   	list.each do |person|
-  		#NewsletterMailer.biweekly(category, person.email).deliver
-      NewsletterMailer.biweekly(category, person).deliver
+  		#NewsletterMailer.biweekly(category, person.email, "real").deliver
+      NewsletterMailer.biweekly(category, person, "real").deliver
       puts person
   	end
 

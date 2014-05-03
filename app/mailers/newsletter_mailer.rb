@@ -6,7 +6,7 @@ class NewsletterMailer < ActionMailer::Base
   #
   #   en.newsletter_mailer.biweekly.subject
   #
-  def biweekly(category, email)
+  def biweekly(category, email, type)
 
     @category = category
     @blurbs = category.blurbs
@@ -16,6 +16,12 @@ class NewsletterMailer < ActionMailer::Base
 
     attachments.inline['fans-losing-it2.png'] = File.read('app/assets/images/fans-losing-it2.png')
     
-    mail to: email, subject: "TheBandwagn: " + category.title.to_s
+    if type == "test"
+      @type = "[test]"
+    else
+      @type = ""
+    end
+
+    mail to: email, subject: "#{@type}TheBandwagn: " + category.title.to_s
   end
 end
