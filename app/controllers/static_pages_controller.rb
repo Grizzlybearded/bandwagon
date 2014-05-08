@@ -11,7 +11,7 @@ class StaticPagesController < ApplicationController
   end
 
   def test
-  	list = ["marcus.gallagher@gmail.com", "marcus@thebandwagn.com"]
+  	list = ["marcus@thebandwagn.com", "marcus.gallagher@gmail.com"]
   	category_id = Category.where(show_to_users: true).first.id
   	list.each do |person|
       Resque.enqueue(MailerWorker,category_id, person, "test")

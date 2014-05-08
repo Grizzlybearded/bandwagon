@@ -24,6 +24,8 @@ Bandwagon::Application.routes.draw do
   resources :categories, only: [:create, :destroy, :update, :edit, :new, :show]
   resources :collectemails, only: [:create]
 
+  mount Resque::Server, at: "/resque"
+
   #resources :categories
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
