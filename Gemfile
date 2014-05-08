@@ -20,6 +20,9 @@ group :production do
 	gem 'rails_12factor', '0.0.2'
 end
 
+# Resque is used for handling background jobs. In this case I'm using it to send email.
+gem 'resque', "~> 1.22.0"
+
 # the text editor we use
 gem 'ckeditor'
 

@@ -11,10 +11,11 @@ class StaticPagesController < ApplicationController
   end
 
   def test
-  	list = ["marcus.gallagher@gmail.com", "marcus@thebandwagn.com", "martin.kleinbard@gmail.com", "martin@thebandwagn.com"]
-  	category = Category.where(show_to_users: true).first
+  	list = ["marcus.gallagher@gmail.com", "marcus@thebandwagn.com"]
+  	category_id = Category.where(show_to_users: true).first.id
   	list.each do |person|
-  		NewsletterMailer.biweekly(category, person, "test").deliver
+      Resque.enqueue(MailerWorker,category_id, person, "test")
+  		#NewsletterMailer.biweekly(category, person, "test").deliver
   	end
   	redirect_to Category.where(show_to_users: true).first
   end

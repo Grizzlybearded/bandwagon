@@ -1,4 +1,6 @@
 class NewsletterMailer < ActionMailer::Base
+  #include Resque::Mailer
+
   default from: "thebandwagn@thebandwagn.com"
 
   # Subject can be set in your I18n file at config/locales/en.yml
@@ -6,12 +8,12 @@ class NewsletterMailer < ActionMailer::Base
   #
   #   en.newsletter_mailer.biweekly.subject
   #
-  def biweekly(category, email, type)
+  def biweekly(category, user_email, type)
 
     @category = category
-    @blurbs = category.blurbs
+    @blurbs = @category.blurbs
     @category_url = category_url(@category)
-    @collect_email = Collectemail.find_by_email(email)
+    @collect_email = user_email
     @unsubscribe = unsubscribe_url(@collect_email.unsubscribe_token)
 
     attachments.inline['fans-losing-it2.png'] = File.read('app/assets/images/fans-losing-it2.png')
@@ -22,6 +24,6 @@ class NewsletterMailer < ActionMailer::Base
       @type = ""
     end
 
-    mail to: email, subject: "#{@type}TheBandwagn: " + category.title.to_s
+    mail to: user_email.email, subject: "#{@type}TheBandwagn: " + @category.title.to_s
   end
 end
