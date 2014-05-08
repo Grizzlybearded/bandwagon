@@ -21,7 +21,7 @@ group :production do
 end
 
 # Resque is used for handling background jobs. In this case I'm using it to send email.
-gem 'resque', "~> 1.22.0"
+gem 'resque', "~> 1.22.0", require: 'resque/server'
 
 # the text editor we use
 gem 'ckeditor'
