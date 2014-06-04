@@ -1,7 +1,12 @@
 class NewsletterMailer < ActionMailer::Base
-  #include Resque::Mailer
+  require 'mail'
+  #include Rails.application.routes.url_helpers
 
-  default from: "thebandwagn@thebandwagn.com"
+  address = Mail::Address.new "thebandwagn@thebandwagn.com"
+  address.display_name = "TheBandwagn"
+
+  default from: address.format
+
 
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
@@ -15,6 +20,7 @@ class NewsletterMailer < ActionMailer::Base
     @category_url = category_url(@category)
     @collect_email = user_email
     @unsubscribe = unsubscribe_url(@collect_email.unsubscribe_token)
+    @home_url = root_url
 
     attachments.inline['fans-losing-it2.png'] = File.read('app/assets/images/fans-losing-it2.png')
     

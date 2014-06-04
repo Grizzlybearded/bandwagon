@@ -7,9 +7,8 @@
 	  	<% if user_signed_in? %>
 			<%= link_to 'Edit', edit_blurb_path(blurb) %>
 			<%= link_to 'Delete', blurb, method: :delete, data: {confirm: "You sure?"} %>
-
 		<% end %>
-	  </span>	
-	  <span class="content"><%= raw(blurb.content) %></span>
+	  </span>
+	  <div class="bandwagn-blurb"><%= raw(blurb.content) %></div>
 	 <% end %>
 </li>

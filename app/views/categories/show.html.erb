@@ -29,7 +29,7 @@
 					<%= link_to "<< Signup", root_path %> | <%= link_to "<< Archive", archive_path %>
 				</div>
 				<h3>STAT OF THE DAY</h3>
-				<p><%= raw(@category.description) %></p>
+				<p class="bandwagn-blurb"><%= raw(@category.description) %></p>
 				<p>
 					<% if user_signed_in? %>
 						<%= form_for(@blurb) do |f| %>

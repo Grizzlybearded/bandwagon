@@ -37,9 +37,6 @@ textarea {
   margin-top: 50px;
 }
 
-.mycat {}
-
-
 /* make the website responsive */
 
 @media screen and (max-width: 960px){
@@ -52,9 +49,11 @@ textarea {
 }
 
 
-
-
-
+/* fixing the way blurbs display */
+.bandwagn-blurb {
+  line-height: 20px;
+  letter-spacing: 0em;
+}
 
 /* header */
 
@@ -224,12 +223,12 @@ $grayMediumLight: #eaeaea;
 .blurbs {
   list-style: none;
   margin: 10px 0 0 0;
-
   li {
     padding: 10px 0;
     border-top: 1px solid #eaeaea;
   }
 }
+
 .content {
   display: block;
 }
