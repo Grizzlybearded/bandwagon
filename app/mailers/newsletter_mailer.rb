@@ -3,7 +3,7 @@ class NewsletterMailer < ActionMailer::Base
   #include Rails.application.routes.url_helpers
 
   address = Mail::Address.new "thebandwagn@thebandwagn.com"
-  address.display_name = "TheBandwagn"
+  address.display_name = "theBandwagn"
 
   default from: address.format
 
@@ -22,7 +22,7 @@ class NewsletterMailer < ActionMailer::Base
     @unsubscribe = unsubscribe_url(@collect_email.unsubscribe_token)
     @home_url = root_url
 
-    attachments.inline['fans-losing-it2.png'] = File.read('app/assets/images/fans-losing-it2.png')
+    attachments.inline['white-writing.png'] = File.read(Rails.root.join('app/assets/images/white-writing.png'))
     
     if type == "test"
       @type = "[test]"
@@ -30,6 +30,6 @@ class NewsletterMailer < ActionMailer::Base
       @type = ""
     end
 
-    mail to: user_email.email, subject: "#{@type}TheBandwagn: " + @category.title.to_s
+    mail to: user_email.email, subject: "#{@type}theBandwagn: " + @category.title.to_s
   end
 end

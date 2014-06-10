@@ -18,32 +18,48 @@
   ga('send', 'pageview');
 </script>
 
-
-<div class="wrapme">
-	<div style="height: 200px; width: 600px;">
-		<img src="/assets/fans-for-web.png">
+<div style="height:350px; background: #1796EB;">
+	<div style="width:800px; margin: 0 auto; padding-top:50px;">
+		<img src="/assets/white-writing.png">
 	</div>
+</div>
+
+<div class="wrapme">	
+	
 	<br>
 	<div style="margin: 0 auto; text-align:center;line-height: 150%;">
-		Do you ever kinda want to know about sports?<br>
-		TheBandwagn team scours the sports world and identifies key information and games that people will be talking about. Enter your email and we'll send you this info every Monday and Friday plus days that have major events.
+		Wish you were up to speed on spots?</br>
+		theBandwagn is a twice-weekly email that highlights the sports world's most important events. It's quick, understandable, and entertaining.</br></br>
+		Don't be left out of another conversation!
 		</br>
 		</br>
 	</div>
 
-	<div style="margin: 0 auto; background: #3D9AD1; height: 150px; width: 600px;">
-		<div style="margin-left:40px; width: 500px; padding-top:26px;">
+	<div style="margin: 0 auto; background: #1796EB; height: 150px; width: 600px;">
+		<div style="margin: 0 auto; width: 500px; padding-top:26px;">
 			<%= form_for @email do |e| %>
-				<%= e.text_field :email, placeholder: "name@example.com", style: "width:100%; height:40px; font-family: helvetica,arial,sans-serif; font-size: 16px;" %></br>
-				<div style="text-align: center"><%= e.submit "Subscribe", class: "btn btn-large", style: "font-family: helvetica,arial,sans-serif; font-size: 16px;" %></div>
+				<%= e.text_field :email, placeholder: "name@example.com", style: "width:100%; height:40px; font-family: montserrat, helvetica,arial,sans-serif; font-size: 16px;" %></br>
+				<div style="text-align: center"><%= e.submit "Subscribe", class: "btn btn-large", style: "font-family: montserrat, helvetica,arial,sans-serif; font-size: 16px;" %></div>
 			<% end %>
 		</div>
 	</div>
 	</br>
+	
+	<div style="background: #1796EB; height: 35px; text-align:center; color: #ffffff; font-size: 120%; padding-top:13px;">
+		Testimonials
+	</div>
+	<div style="text-align:center; padding-top:13px; padding-bottom: 13px;">
+		"I finally know what's going on in sports!"<br><br>
+		"When my friends at work talk about that huge play from last night, I can actually contribute to the conversation!"<br><br>
+		"theBandwagn is short and in language I understand. Love it!"
+	</div>
+	<div style="text-align:center; background: #1796EB; color: #ffffff; padding-top:13px; padding-bottom:13px;" hover="color:#ffffff;">
+		Check out our <%= link_to "Archive", archive_path, {class: "link_color"} %> or a recent edition below
+	</div>
 
-	<div style="margin: 0 auto; text-align:center; position: relative; width:500px; font-size: 125%; line-height: 150%;">
-		Check out our <%= link_to "Archive", archive_path %> or a recent edition below.
-		<br><br>
+	</br>
+	<div style="margin: 0 auto; text-align:center; position: relative; width:500px; line-height: 150%;">
+		
 		<!-- I got these buttons from simplesharebuttons.com -->
 		<div id="share-buttons">
 		 
@@ -57,7 +73,7 @@
 			<a href="http://www.linkedin.com/shareArticle?mini=true&url=http://www.thebandwagn.com" target="_blank"><img src="http://www.simplesharebuttons.com/images/somacro/linkedin.png" alt="LinkedIn" /></a>
 			 
 			<!-- Email -->
-			<a href="mailto:?Subject=TheBandwagn&Body=The%20week's%20must-know%20sports%20news%20in%20just%20a%20few%20short%20sound%20bites!%20#thebandwagn http://www.thebandwagn.com"><img src="http://www.simplesharebuttons.com/images/somacro/email.png" alt="Email" /></a>
+			<a href="mailto:?Subject=theBandwagn&Body=The%20week's%20must-know%20sports%20news%20in%20just%20a%20few%20short%20sound%20bites!%20#thebandwagn http://www.thebandwagn.com"><img src="http://www.simplesharebuttons.com/images/somacro/email.png" alt="Email" /></a>
 		</div>
 
 	</div>
@@ -71,7 +87,7 @@
 	<div class="mycat">
 		<% if !@category.send_date.nil? %>
 			<div style="margin: 0 auto; text-align:center; border-top: 1px solid #eaeaea; border-bottom: 1px solid #eaeaea;">
-					<h4 style="text-align:center;">TheBandwagn from <%= @category.send_date.strftime("%B %e, %Y").to_s %></h4>
+					<h4 style="text-align:center;">theBandwagn from <%= @category.send_date.strftime("%B %e, %Y").to_s %></h4>
 			</div>
 		<% end %>
 

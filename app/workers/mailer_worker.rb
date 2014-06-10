@@ -3,7 +3,7 @@ class MailerWorker
 
 	def self.perform(category_id, email, type)
 		category = Category.find(category_id)
-		user_email = Collectemail.find_by_email(email)	
+		user_email = Collectemail.find_by_email(email)
 		NewsletterMailer.biweekly(category, user_email, type).deliver
 	end
 end

@@ -34,7 +34,6 @@ textarea {
 .wrapme {
   width: 600px;
   margin: 0 auto;
-  margin-top: 50px;
 }
 
 /* make the website responsive */
@@ -48,11 +47,16 @@ textarea {
   }
 }
 
-
 /* fixing the way blurbs display */
 .bandwagn-blurb {
   line-height: 20px;
   letter-spacing: 0em;
+}
+
+.link_color {
+  color: #ffffff;
+  font-size:bold;
+  text-decoration:underline;
 }
 
 /* header */
