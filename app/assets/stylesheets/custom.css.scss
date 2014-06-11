@@ -35,6 +35,14 @@ textarea {
   width: 600px;
   margin: 0 auto;
 }
+.bluebackground {
+  background: #1796EB; 
+  height: 35px; 
+  text-align:center; 
+  color: #ffffff; 
+  font-size: 120%; 
+  padding-top:13px;
+}
 .innerformformat {
   margin: 0 auto; 
   width: 500px; 
@@ -85,6 +93,16 @@ textarea {
     max-width: 100%;
     margin-left: 3px;
     margin-right: 3px;
+  }
+  .bluebackground {
+    width: 100%;
+    max-width: 100%;
+    background: #1796EB; 
+    height: 35px; 
+    text-align:center; 
+    color: #ffffff; 
+    font-size: 120%; 
+    padding-top:13px;
   }
   .innerformformat{
     margin: 0 auto;
