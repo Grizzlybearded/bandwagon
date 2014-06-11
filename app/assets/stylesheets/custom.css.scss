@@ -83,6 +83,18 @@ textarea {
 
 /* make the website responsive */
 
+@media screen and (max-width: 400px) {
+  .bluebackground {
+    width: 100%;
+    max-width: 100%;
+    background: #1796EB;  
+    text-align:center; 
+    color: #ffffff; 
+    font-size: 120%;
+    padding: 10% 10% 10% 10%
+  }
+}
+
 @media screen and (max-width: 960px){
   .wrapme {
     width: 100%;
