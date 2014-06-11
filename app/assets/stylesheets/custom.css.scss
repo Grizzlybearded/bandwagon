@@ -56,6 +56,13 @@ textarea {
     font-size: 16px;
   }
 }
+.socialmedialinks {
+  margin: 0 auto;
+  text-align:center;
+  position: relative;
+  width:500px;
+  line-height: 150%;
+}
 .fullbleedouter {
   height:350px; 
   background: #1796EB;
@@ -70,10 +77,6 @@ textarea {
 
 @media screen and (max-width: 960px){
   .wrapme {
-    width: 100%;
-    max-width: 100%;
-  }
-  .myheader{
     width: 100%;
     max-width: 100%;
   }
@@ -105,6 +108,14 @@ textarea {
       font-size: 16px;
     }
   }
+  .socialmedialinks {
+    margin: 0 auto;
+    text-align:center;
+    position: relative;
+    width:100%;
+    max-width:100%;
+    line-height: 150%;
+  }
   .fullbleedouter {
     height:350px; 
     background: #1796EB;
@@ -112,8 +123,6 @@ textarea {
   .fullbleedinner {
     width:100%; 
     max-width: 100%;
-    margin: 0 auto; 
-    padding-top:50px;
   }
 }
 
