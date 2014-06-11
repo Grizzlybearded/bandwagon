@@ -35,6 +35,17 @@ textarea {
   width: 600px;
   margin: 0 auto;
 }
+.innerformformat {
+  margin: 0 auto; 
+  width: 500px; 
+  padding-top:26px;
+}
+.outerformformat {
+  margin: 0 auto; 
+  background: #1796EB; 
+  height: 150px; 
+  width: 600px;
+}
 
 /* make the website responsive */
 
@@ -43,11 +54,27 @@ textarea {
     width: 100%;
     max-width: 100%;
   }
+  .myheader{
+    width: 67%%;
+    max-width: 100%;
+  }
   .mycat {
     width: 100%;
     max-width: 100%;
     margin-left: 3px;
     margin-right: 3px;
+  }
+  .innerformformat{
+    margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
+  }
+  .outerformformat {
+    margin: 0 auto;
+    background: #1796EB; 
+    height: 150px; 
+    width: 100%;
+    max-width: 100%;
   }
 }
 
