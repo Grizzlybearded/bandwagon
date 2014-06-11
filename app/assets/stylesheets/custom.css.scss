@@ -40,10 +40,14 @@ textarea {
 
 @media screen and (max-width: 960px){
   .wrapme {
+    width: 100%;
+    max-width: 100%;
   }
   .mycat {
-    margin-left: 2px;
-    margin-right: 2px;
+    width: 100%;
+    max-width: 100%;
+    margin-left: 3px;
+    margin-right: 3px;
   }
 }
 
