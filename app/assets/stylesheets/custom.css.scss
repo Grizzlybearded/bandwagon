@@ -98,12 +98,12 @@ textarea {
     background: #1796EB;
     width: 100%;
     max-width: 100%;
+    height: 200px;
     max-height: 200px;
   }
   .fullbleedinner {
     width:80%; 
     max-width: 100%;
-    height: auto;
     max-height: 100%;
   }
 }
@@ -112,7 +112,6 @@ textarea {
   .wrapme {
     width: 100%;
     max-width: 100%;
-    margin: 0;
   }
   .mycat {
     width: 100%;
@@ -126,7 +125,7 @@ textarea {
     background: #1796EB;  
     text-align:center; 
     color: #ffffff; 
-    font-size: 120%; 
+    font-size: 120%;
   }
   .innerformformat{
     text-align: center;
