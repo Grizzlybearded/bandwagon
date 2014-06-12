@@ -156,16 +156,21 @@ textarea {
     line-height: 150%;
   }
   .fullbleedouter {
+    
     background: #1796EB;
     width: 100%;
     max-width: 100%;
+    /*
     text-align: center;
     max-height: 100%;
+    */
+    
     img {
       width:80%; 
-      margin: 0 auto; 
-      vertical-align: middle;
+      margin: 0; 
+      /* vertical-align: middle; */
     }
+
   }
   .fullbleedinner {
 
