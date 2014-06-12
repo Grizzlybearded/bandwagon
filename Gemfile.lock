@@ -157,7 +157,7 @@ DEPENDENCIES
   rails (= 4.0.3)
   rails_12factor (= 0.0.2)
   resque (~> 1.22.0)
-  sass-rails (~> 4.0.2)
+  sass-rails (= 4.0.2)
   sdoc
   sqlite3
   turbolinks
