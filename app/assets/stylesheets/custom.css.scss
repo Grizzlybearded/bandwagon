@@ -75,16 +75,25 @@ textarea {
   width:500px;
   line-height: 150%;
 }
+
 .fullbleedouter {
-  height:350px;
+  height: 350px;
   background: #1796EB;
   text-align:center;
-  line-height: 350px;
+  font-size: 0;
 }
 .fullbleedinner {
-  width:800px;
-  margin: 0 auto;
+  content:'';
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
 }
+.fullbleedouter img {
+  display: inline-block;
+  vertical-align:middle;
+  width: 800px;
+}
+
 
 /* make the website responsive */
 
@@ -156,16 +165,21 @@ textarea {
     line-height: 150%;
   }
   .fullbleedouter {
+    height: 30%;
     background: #1796EB;
-    width: 100%;
-    text-align: center;
-    max-height: 30% !important;
-    height: 350px;
-    line-height: 350px;
+    text-align:center;
+    font-size: 0;
   }
   .fullbleedinner {
-    width: 80% !important;
-    margin: 0 auto;
+    content:'';
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+  }
+  .fullbleedouter img {
+    display: inline-block;
+    vertical-align:middle;
+    width: 80%;
   }
 }
 
