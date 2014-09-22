@@ -9,6 +9,7 @@ Bandwagon::Application.routes.draw do
   get "static_pages/home"  
   get "static_pages/test"
   get "static_pages/eblast"
+  get 'about', to: 'static_pages#about', as: :about
 
   #The following commented out routes don't work
   get 'archive', to: 'categories#index', as: :archive

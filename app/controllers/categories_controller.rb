@@ -4,7 +4,11 @@ class CategoriesController < ApplicationController
   def show
     @category_for_email = Category.where(show_to_users: true).first
 
-  	@categories = Category.all
+    if user_signed_in?
+  	 @categories = Category.all
+    else
+     @categories = Category.last(10) 
+    end
   	@category = Category.find_by_title(params[:id])
   	@blurbs = @category.blurbs
   	@blurb = @category.blurbs.build
