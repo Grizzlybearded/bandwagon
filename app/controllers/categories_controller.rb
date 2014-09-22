@@ -49,7 +49,7 @@ class CategoriesController < ApplicationController
   end
 
   def index
-    @categories_for_users = Category.where(show_to_users: true).last(15)
+    @categories_for_users = Category.where(show_to_users: true).limit(15)
     @categories_for_mm = Category.all
   end
 
