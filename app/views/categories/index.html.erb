@@ -4,13 +4,14 @@
 </div>
 
 
-
 <div class="wrapme">
 	</br>
 
 	<ul style="margin: 0 auto; text-align:center;">
 		<%= link_to "<< Back to signup", root_path %>
 		</br></br>
+		<h1>Archive</h1>
+		</br>
 		<% if user_signed_in? %>
 			<% @categories_for_mm.each do |c| %>
 				<li style="list-style-type:none;">
