@@ -3,7 +3,12 @@ class StaticPagesController < ApplicationController
 
   def home
   	@email = Collectemail.new
-  	@category = Category.where(show_to_users: true).first
+  	if Category.where(show_to_users: true).fifth.nil?
+      @category = Category.where(show_to_users: true).first
+    else
+      @category = Category.where(show_to_users: true).fifth
+    end
+
     @blurbs = @category.blurbs
   end
 
