@@ -28,17 +28,19 @@
 	
 	<br>
 	<div style="margin: 0 auto; text-align:center;line-height: 150%; padding-left:5px; padding-right:5px;">
-		Wish you were up to speed on sports?</br>
-		theBandwagn is a twice-weekly email that highlights the sports world's most important events. It's quick, understandable, and entertaining.</br></br>
-		Don't be left out of another conversation!
+		Get the sports info you need in 5 minutes with theBandwagn's twice-weekly email.</br>
+		Don't be left out of another sports conversation!
 		</br>
 		</br>
 	</div>
-
+	<div class="bluebackground" style="padding-bottom:0px;">
+		Invite-only Access
+	</div>
 	<div class="outerformformat">
 		<div class="innerformformat">
 			<%= form_for @email do |e| %>
 				<div class="myform" ><%= e.text_field :email, placeholder: "name@example.com", class: "textfieldpart" %></div></br>
+				<div class="myform" ><%= e.text_field :access_code, placeholder: "Enter access code here", class: "textfieldpart" %></div></br>
 				<div style="text-align: center"><%= e.submit "Subscribe", class: "btn btn-large", style: "font-family: montserrat, helvetica,arial,sans-serif; font-size: 16px;" %></div>
 			<% end %>
 		</div>
@@ -50,11 +52,11 @@
 	</div>
 	<div style="text-align:center; padding-top:13px; padding-bottom: 13px; padding-left:5px; padding-right:5px;">
 		"theBandwagn has improved my marriage!" -Kara (Grad Student)<br><br>
-		"When my friends at work talk about that huge play from last night, I can actually contribute to the conversation!" -Jeremy (Financial Analyst)<br><br>
+		"When my friends talk about that huge play from last night, I can actually contribute to the conversation!" -Jeremy (Financial Analyst)<br><br>
 		"theBandwagn is short and in language I understand!" -Rebecca (Ad Exec)
 	</div>
 	<div class="bluebackground">
-		<%= link_to "Archive", archive_path, {class: "link_color"} %> | <%= link_to "About", about_path, {class: "link_color"} %>
+		 <%= link_to "About", about_path, {class: "link_color"} %> | <%= link_to "Archive", archive_path, {class: "link_color"} %>
 	</div>
 
 	</br>
@@ -78,33 +80,6 @@
 
 	</div>
 	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-
-	<div class="mycat">
-		<% if !@category.send_date.nil? %>
-			<div style="margin: 0 auto; text-align:center; border-top: 1px solid #eaeaea; border-bottom: 1px solid #eaeaea;">
-					<h4 style="text-align:center;">theBandwagn from <%= @category.send_date.strftime("%B %e, %Y").to_s %></h4>
-			</div>
-		<% end %>
-
-		<div>
-			<% if @blurbs.any? %>
-				<h2 style="text-align:center;"><%= @category.title %></h2>
-				<h3>STAT OF THE DAY</h3>
-				<p><%= raw(@category.description) %></p>
-				<ol class="blurbs">
-					<%= render @blurbs %>
-				</ol>
-
-			<% else %>
-				<%= "Not much to mention right now.  This sport will probs become relevant in a few months." %>
-			<% end %>
-		</div>
-	</div>
 	<br>
 	<br>
 </div>

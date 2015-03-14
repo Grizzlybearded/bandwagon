@@ -4,18 +4,23 @@ class CollectemailsController < ApplicationController
 		@email = Collectemail.new(collectemails_params)
 		@find_email = Collectemail.find_by_email_and_send_email(@email.email, false)
 		
-		if @find_email.nil?
-			@email.generate_token
-			if @email.save
-				flash[:success] = "You'll receive our next email.  In the meantime, check out our archive!"
-				redirect_to root_path
+		if Collectemail.check_access_code(@email.access_code)
+			if @find_email.nil?
+				@email.generate_token
+				if @email.save
+					flash[:success] = "You'll receive our next email.  In the meantime, check out our archive!"
+					redirect_to root_path
+				else
+					flash[:notice] = "Your email was not added. Please try once more."
+					redirect_to root_path
+				end
 			else
-				flash[:notice] = "Your email was not added to our distribution."
+				@find_email.update_attributes(send_email: true)
+				flash[:success] = "You'll receive our next email.  In the meantime, check out our archive!"
 				redirect_to root_path
 			end
 		else
-			@find_email.update_attributes(send_email: true)
-			flash[:success] = "You'll receive our next email.  In the meantime, check out our archive!"
+			flash[:notice] = "That access code is not valid.  Please try again."
 			redirect_to root_path
 		end
 	end
@@ -32,6 +37,6 @@ class CollectemailsController < ApplicationController
 
 private
 	def collectemails_params
-		params.require(:collectemail).permit(:email)
+		params.require(:collectemail).permit(:email, :access_code)
 	end
 end

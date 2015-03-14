@@ -3,8 +3,9 @@ class Collectemail < ActiveRecord::Base
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 	validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }, uniqueness: true
 	validates :unsubscribe_token, presence: true
+	VALID_ACCESS_CODE = ["marchmadnessaccess", "cbsonly"]
 
-	default_scope order('created_at ASC')	
+	default_scope order('created_at ASC')
 
 	#before_save :generate_token
 
@@ -22,4 +23,7 @@ class Collectemail < ActiveRecord::Base
 		end
 	end
 
+	def self.check_access_code(access_code)
+		VALID_ACCESS_CODE.include?(access_code.downcase)
+	end
 end
