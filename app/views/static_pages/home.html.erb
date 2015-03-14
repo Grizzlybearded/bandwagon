@@ -56,7 +56,7 @@
 		"theBandwagn is short and in language I understand!" -Rebecca (Ad Exec)
 	</div>
 	<div class="bluebackground">
-		 <%= link_to "About", about_path, {class: "link_color"} %> | <%= link_to "Archive", archive_path, {class: "link_color"} %>
+		 <%= link_to "About Us", about_path, {class: "link_color"} %>
 	</div>
 
 	</br>
@@ -79,6 +79,30 @@
 		</div>
 
 	</div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<div class="mycat">
+		<% if !@category.send_date.nil? %>
+			<div style="margin: 0 auto; text-align:center; border-top: 1px solid #eaeaea; border-bottom: 1px solid #eaeaea;">
+					<h4 style="text-align:center;">Past Issue: theBandwagn from <%= @category.send_date.strftime("%B %e, %Y").to_s %></h4>
+			</div>
+		<% end %>
+
+		<div>
+			<% if @blurbs.any? %>
+				<h2 style="text-align:center;"><%= @category.title %></h2>
+				<h3>STAT OF THE DAY</h3>
+				<p><%= raw(@category.description) %></p>
+				<ol class="blurbs">
+					<%= render @blurbs %>
+				</ol>
+			<% end %>
+		</div>
+	</div>
+
+	<br>
 	<br>
 	<br>
 	<br>
