@@ -4,7 +4,7 @@ class CollectemailsController < ApplicationController
 		@email = Collectemail.new(collectemails_params)
 		@find_email = Collectemail.find_by_email_and_send_email(@email.email, false)
 		
-		if Collectemail.check_access_code(@email.access_code)
+		# if Collectemail.check_access_code(@email.access_code)
 			if @find_email.nil?
 				@email.generate_token
 				if @email.save
@@ -19,10 +19,10 @@ class CollectemailsController < ApplicationController
 				flash[:success] = "You'll receive our next email.  In the meantime, check out our archive!"
 				redirect_to root_path
 			end
-		else
-			flash[:notice] = "That access code is not valid.  Please try again."
-			redirect_to root_path
-		end
+		# else
+		# 	flash[:notice] = "That access code is not valid.  Please try again."
+		# 	redirect_to root_path
+		# end
 	end
 
 	def unsubscribe
@@ -37,6 +37,6 @@ class CollectemailsController < ApplicationController
 
 private
 	def collectemails_params
-		params.require(:collectemail).permit(:email, :access_code)
+		params.require(:collectemail).permit(:email)
 	end
 end

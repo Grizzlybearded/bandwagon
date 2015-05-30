@@ -1,4 +1,6 @@
 Bandwagon::Application.routes.draw do
+  #get "waitlists/create"
+  #get "waitlists/destroy"
   devise_for :users
   #get "categories/:id", to: 'categories#show'
   #get "categories/new"
@@ -9,6 +11,7 @@ Bandwagon::Application.routes.draw do
   get "static_pages/home"  
   get "static_pages/test"
   get "static_pages/eblast"
+  get "waitlists/transition"
   get 'about', to: 'static_pages#about', as: :about
 
   #The following commented out routes don't work
@@ -24,6 +27,7 @@ Bandwagon::Application.routes.draw do
   resources :blurbs, only: [:create, :destroy, :update, :edit]
   resources :categories, only: [:create, :destroy, :update, :edit, :new, :show]
   resources :collectemails, only: [:create]
+  resources :waitlists, only: [:create, :destroy]
 
   authenticate :user do
     mount Resque::Server, at: "/resque"

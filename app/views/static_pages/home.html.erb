@@ -34,13 +34,12 @@
 		</br>
 	</div>
 	<div class="bluebackground" style="padding-bottom:0px;">
-		Invite-only Access
+		Join our waiting list!
 	</div>
 	<div class="outerformformat">
 		<div class="innerformformat">
-			<%= form_for @email do |e| %>
-				<div class="myform" ><%= e.text_field :email, placeholder: "name@example.com", class: "textfieldpart" %></div></br>
-				<div class="myform" ><%= e.text_field :access_code, placeholder: "Enter access code here", class: "textfieldpart" %></div></br>
+			<%= form_for @waitemail do |e| %>
+				<div class="myform" ><%= e.text_field :waitemail, placeholder: "name@example.com", class: "textfieldpart" %></div></br>
 				<div style="text-align: center"><%= e.submit "Subscribe", class: "btn btn-large", style: "font-family: montserrat, helvetica,arial,sans-serif; font-size: 16px;" %></div>
 			<% end %>
 		</div>

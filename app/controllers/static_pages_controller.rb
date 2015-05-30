@@ -2,7 +2,7 @@ class StaticPagesController < ApplicationController
   before_filter :authenticate_user!, except: [:home, :about]  
 
   def home
-  	@email = Collectemail.new
+  	@waitemail = Waitlist.new
   	if Category.where(show_to_users: true).fifth.nil?
       @category = Category.where(show_to_users: true).first
     else
