@@ -1,28 +1,11 @@
-== README
+== Bandwagon: a sport-focused newsletter
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The Bandwagon was a daily email newsletter focused on sports. The target user was someone who didn't care about sports but was around people who cared and spoke about sports often. The email, which was sent out each weekday morning, consisted of 5-8 sports topics that were most likely to be spoken about on a given day. It allowed the user to acquire all the information about sports that he/she would need to know that day, in 2-3 minutes. It allowed the user to join the sports conversation.
 
-Things you may want to cover:
+== Why did I do this?
 
-* Ruby version
+I was solving my own problem. I wasn't interested in sports but was constantly around people who spoke about sports. So, I teamed up with a friend who was a big sports fan. He wrote the daily sport newsletters. I created the software platform that sent our daily email newsletter and uploaded the newsletter to a responsive website.
 
-* System dependencies
+== What was the result?
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+At peak, we had ~350 subscribers to our daily newsletter. We operated this for about 1 year.
