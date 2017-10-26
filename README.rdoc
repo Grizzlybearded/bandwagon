@@ -4,7 +4,7 @@ The Bandwagon was a daily email newsletter focused on sports. The target user wa
 
 == Why did I do this?
 
-I was solving my own problem. I wasn't interested in sports but was constantly around people who spoke about sports. So, I teamed up with a friend who was a big sports fan. He wrote the daily sport newsletters. I created the software platform that sent our daily email newsletter and uploaded the newsletter to a responsive website.
+People who don't care about sports, but hang out with people who do care about sports, are often left out of conversations. I thought this might be an interesting problem to try to solve. So, I teamed up with a friend who was a big sports fan (across all sports). He wrote our sports-focused daily email newsletter. I created the software platform that emailed our daily email newsletter to users and uploaded the newsletter to a responsive website.
 
 == What was the result?
 
